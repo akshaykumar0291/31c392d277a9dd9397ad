@@ -25,10 +25,10 @@ const AsteroidDetails = (props) => {
     <View style = {styles.container}>
         {showSpinner ? <SpinnerView/> : null}
         {asteroidDetails ? (
-          <View>
-            <Text>Name: {asteroidDetails.name}</Text>
-            <Text>nasa_jpl_url: {asteroidDetails.nasa_jpl_url}</Text>
-            <Text> is_potentially_hazardous_asteroid: {asteroidDetails.is_potentially_hazardous_asteroid ? 'Yes' : 'No'}</Text>
+          <View style={styles.item}>
+            <Text style={styles.text}>Name: {asteroidDetails.name}</Text>
+            <Text style={styles.text}>nasa_jpl_url: {asteroidDetails.nasa_jpl_url}</Text>
+            <Text style={styles.text}> is_potentially_hazardous_asteroid: {asteroidDetails.is_potentially_hazardous_asteroid ? 'Yes' : 'No'}</Text>
           </View>
         ) : <Text >No Detail found</Text>}
     </View>
@@ -44,6 +44,15 @@ container: {
 errorText : {
     fontSize: 20,
     fontWeight: 'bold'
+},
+item: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 5,
+    elevation: 2,
+    padding: 15
+},
+text: {
+    marginBottom : 5
 }
 });
 
